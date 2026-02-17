@@ -6,3 +6,10 @@ services:
     ports:
       - "8082:80"
     restart: unless-stopped
+    environment:
+      - TEST_VAR=${TEST_VAR}
+    command: >
+      sh -c "echo '<html><body><h1>Env Vars</h1><pre>' > /usr/share/nginx/html/index.html
+      && env | sort >> /usr/share/nginx/html/index.html
+      && echo '</pre></body></html>' >> /usr/share/nginx/html/index.html
+      && nginx -g 'daemon off;'"

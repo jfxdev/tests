@@ -13,15 +13,4 @@ services:
       && env | sort >> /usr/share/nginx/html/index.html
       && echo '</pre></body></html>' >> /usr/share/nginx/html/index.html
       && nginx -g 'daemon off;'"
-    volumes:
-      - nginx_data:/usr/share/nginx/csv
-    networks:
-      - app_network
- 
-volumes:
-  nginx_data:
-    driver: local
- 
-networks:
-  app_network:
-    driver: bridge
+

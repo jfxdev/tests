@@ -12,6 +12,7 @@ services:
       - TEST_VAR2=${TEST_VAR2}
       - TEST_VAR3=${TEST_VAR3}
       - TEST_VAR4=${TEST_VAR4}
+      - TEST_VAR5=${TEST_VAR5}
     command: >
       sh -c "echo '<html><body><h1>Env Vars</h1><pre>' > /usr/share/nginx/html/index.html
       && env | sort >> /usr/share/nginx/html/index.html

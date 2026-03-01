@@ -1,6 +1,8 @@
 title: Hello World
 description: Example with a Hello World message
-image: hello-world
+image: alpine
 cron: "* * * * *"
+command:
+  - env
 tags:
   - local

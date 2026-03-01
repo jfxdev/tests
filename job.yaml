@@ -1,3 +1,5 @@
+name: Hello World
+description: Example with a Hello World message
 image: hello-world
 cron: "* * * * *"
 tags:

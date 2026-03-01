@@ -1,4 +1,4 @@
-name: Hello World
+title: Hello World
 description: Example with a Hello World message
 image: hello-world
 cron: "* * * * *"

@@ -1,9 +1,12 @@
 title: Hello World
 description: Example with a Hello World message
-image: alpine
+image: docker
 cron: "* * * * *"
 command:
-  - env
+  - docker
+  - ps
 tags:
   - local
 mode: once_all
+volumes:
+  - /var/run/docker.sock:/var/run/docker.sock

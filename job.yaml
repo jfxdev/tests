@@ -1,2 +1,4 @@
 image: hello-world
 cron: "* * * * *"
+tags:
+  - local

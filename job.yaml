@@ -6,3 +6,4 @@ command:
   - env
 tags:
   - local
+mode: once_all

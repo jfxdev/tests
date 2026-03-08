@@ -11,6 +11,7 @@ tags:
   - blue
   - linux
   - unix
+  - windows
 mode: once_all
 volumes:
   - /var/run/docker.sock:/var/run/docker.sock

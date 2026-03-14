@@ -33,7 +33,7 @@ services:
       - traefik.http.routers.my-container.rule=Host(`test2.minilab.cloud`)
     image: nginx:1.28.2-alpine
     ports:
-      - "8083:80"
+      - "8084:80"
     restart: unless-stopped
     environment:
       - TEST_VAR=${TEST_VAR}
@@ -47,6 +47,65 @@ services:
     networks:
       - app_network
 
+  nginx3:
+    container_name: nginx3
+    labels:
+      - traefik.http.routers.my-container.rule=Host(`test2.minilab.cloud`)
+    image: nginx:1.28.2-alpine
+    ports:
+      - "8085:80"
+    restart: unless-stopped
+    environment:
+      - TEST_VAR=${TEST_VAR}
+    command: >
+      sh -c "echo '<html><body><h1>Env Vars</h1><pre>' > /usr/share/nginx/html/index.html
+      && env | sort >> /usr/share/nginx/html/index.html
+      && echo '</pre></body></html>' >> /usr/share/nginx/html/index.html
+      && nginx -g 'daemon off;'"
+    volumes:
+      - nginx_data:/usr/share/nginx/csv
+    networks:
+      - app_network
+
+  nginx4:
+    container_name: nginx4
+    labels:
+      - traefik.http.routers.my-container.rule=Host(`test2.minilab.cloud`)
+    image: nginx:1.28.2-alpine
+    ports:
+      - "8086:80"
+    restart: unless-stopped
+    environment:
+      - TEST_VAR=${TEST_VAR}
+    command: >
+      sh -c "echo '<html><body><h1>Env Vars</h1><pre>' > /usr/share/nginx/html/index.html
+      && env | sort >> /usr/share/nginx/html/index.html
+      && echo '</pre></body></html>' >> /usr/share/nginx/html/index.html
+      && nginx -g 'daemon off;'"
+    volumes:
+      - nginx_data:/usr/share/nginx/csv
+    networks:
+      - app_network
+
+  nginx5:
+    container_name: nginx5
+    labels:
+      - traefik.http.routers.my-container.rule=Host(`test2.minilab.cloud`)
+    image: nginx:1.28.2-alpine
+    ports:
+      - "8083:80"
+    restart: unless-stopped
+    environment:
+      - TEST_VAR=${TEST_VAR}
+    command: >
+      sh -c "echo '<html><body><h1>Env Vars</h1><pre>' > /usr/share/nginx/html/index.html
+      && env | sort >> /usr/share/nginx/html/index.html
+      && echo '</pre></body></html>' >> /usr/share/nginx/html/index.html
+      && nginx -g 'daemon off;'"
+    volumes:
+      - nginx_data:/usr/share/nginx/csv
+    networks:
+      - app_network
 volumes:
   nginx_data:
     driver: local

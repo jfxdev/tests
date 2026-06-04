@@ -1,7 +1,11 @@
-title: Hello World
+name: Hello World
 description: Example with a Hello World message
 image: docker
 cron: "* * * * *"
+resources:
+  cpu: 1
+  memory: 1gb
+  timeout: 30s
 command:
   - docker
   - ps

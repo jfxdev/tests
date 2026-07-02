@@ -1,0 +1,19 @@
+name: Limpar imagens orfas
+description: Remove imagens Docker dangling do host onde o worker esta rodando
+image: docker
+cron: "0 3 * * *"
+resources:
+  cpu: 1
+  memory: 256mb
+  timeout: 2m
+command:
+  - docker
+  - image
+  - prune
+  - -f
+tags:
+  - local
+  - node
+mode: once_all
+volumes:
+  - /var/run/docker.sock:/var/run/docker.sock

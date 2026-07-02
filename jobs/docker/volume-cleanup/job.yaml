@@ -1,5 +1,5 @@
-name: Limpar imagens orfas
-description: Remove imagens Docker dangling do host onde o worker esta rodando
+name: Clean Up Docker Dangling Images
+description: Removes dangling Docker images from the host where the worker is running
 image: docker
 cron: "0 3 * * *"
 resources:

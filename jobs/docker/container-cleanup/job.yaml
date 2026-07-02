@@ -1,5 +1,5 @@
-name: Limpar containers parados
-description: Remove containers Docker parados do host onde o worker esta rodando
+name: Clean Up Docker Stopped Containers
+description: Removes stopped Docker containers from the host where the worker is running
 image: docker
 cron: "30 3 * * *"
 resources:

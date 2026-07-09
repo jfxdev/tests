@@ -9,3 +9,4 @@ jobs:
 worker:
   tags:
     - node
+    - local

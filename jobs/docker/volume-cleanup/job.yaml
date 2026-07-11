@@ -3,8 +3,8 @@ description: Removes dangling Docker images from the host where the worker is ru
 image: docker
 cron: "0 3 * * *"
 resources:
-  cpu: 1
-  memory: 256mb
+  cpu: 0.2
+  memory: 128mb
   timeout: 2m
 command:
   - docker

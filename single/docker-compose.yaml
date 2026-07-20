@@ -28,8 +28,6 @@ services:
 
   nginx2:
     container_name: nginx2
-    annotations:
-      - customization.image.slug=nginx
     labels:
       - traefik.http.routers.my-container.rule=Host(`test.minilab.cloud`)
     image: nginx:1.28.2-alpine

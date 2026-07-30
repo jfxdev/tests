@@ -1,0 +1,12 @@
+version: wireops.v1
+name: my-test-1
+timeout: 5m
+compose:
+  remove_orphans: true
+  force_pull: false
+jobs:
+  wait_running: true
+worker:
+  tags:
+    - node
+    - local

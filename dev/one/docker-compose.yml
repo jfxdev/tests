@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  nginx:
+    container_name: nginx
+    annotations:
+      - customization.image.slug=nginx
+    labels:
+      - traefik.http.routers.my-container.rule=Host(`test.minilab.cloud`)
+    image: nginx:1.28.2-alpine
+    ports:
+      - "8084:80"
+    restart: unless-stopped
+    environment:
+      - TEST_VAR=${TEST_VAR}
+      - TEST_VAR1=${TEST_VAR1}
+      - TEST_VAR2=${TEST_VAR2}
+      - TEST_VAR3=${TEST_VAR3}
+      - TEST_VAR4=${TEST_VAR4}
+    command: >
+      sh -c "echo '<html><body><h1>Env Vars</h1><pre>' > /usr/share/nginx/html/index.html
+      && env | sort >> /usr/share/nginx/html/index.html
+      && echo '</pre></body></html>' >> /usr/share/nginx/html/index.html
+      && nginx -g 'daemon off;'"
+    volumes:
+      - nginx_data:/usr/share/nginx/csv
+    networks:
+      - app_network
+
+volumes:
+  nginx_data:
+    driver: local
+ 
+networks:
+  app_network:
+    driver: bridge

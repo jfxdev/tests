@@ -181,6 +181,11 @@ services:
       - nginx_data:/usr/share/nginx/csv
     networks:
       - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
 networks:
   app_network:
     driver: bridge

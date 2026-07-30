@@ -186,6 +186,7 @@ networks:
   app_network:
     driver: bridge
 
-networks:
-  app_network:
-    driver: bridge
+volumes:
+  nginx_data:
+    driver: local
+

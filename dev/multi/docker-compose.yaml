@@ -52,7 +52,7 @@ services:
     networks:
       - app_network
 
-   nginx3:
+  nginx3:
     container_name: nginx3
     annotations:
       - customization.image.slug=nginx

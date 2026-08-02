@@ -22,7 +22,7 @@ services:
       && echo '</pre></body></html>' >> /usr/share/nginx/html/index.html
       && nginx -g 'daemon off;'"
     volumes:
-      - nginx_data:/usr/share/nginx/csv
+      - nginx_data1:/usr/share/nginx/csv
     networks:
       - app_network
 
@@ -188,5 +188,8 @@ networks:
 
 volumes:
   nginx_data:
+    driver: local
+
+  nginx_data1:
     driver: local
 

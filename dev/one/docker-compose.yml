@@ -21,3 +21,5 @@ services:
       && env | sort >> /usr/share/nginx/html/index.html
       && echo '</pre></body></html>' >> /usr/share/nginx/html/index.html
       && nginx -g 'daemon off;'"
+    networks:
+      - app_network

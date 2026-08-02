@@ -7,6 +7,8 @@ services:
     labels:
       - traefik.http.routers.my-container.rule=Host(`test.minilab.cloud`)
     image: nginx:1.28.2-alpine
+    depends_on:
+      - nginx2
     ports:
       - "8081:80"
     restart: unless-stopped

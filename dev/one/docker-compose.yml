@@ -23,3 +23,7 @@ services:
       && nginx -g 'daemon off;'"
     networks:
       - app_network
+
+networks:
+  app_network:
+    external: true
